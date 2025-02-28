@@ -1,0 +1,148 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #e3f2fd;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+}
+
+/* HEADER WITH IMAGE */
+header {
+    background: url('../images/headerImage2.jpg') no-repeat center center/cover;
+    height: 118px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-overlay h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex-grow: 1; /* Takes remaining space */
+}
+
+/* Dropdown */
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Weather Items */
+.weather-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather Images */
+.weather-item img {
+    width: 131px;
+    height: 66px;
+}
+
+/* Hourly Forecast Label */
+.weather-item .time-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* FOOTER */
+footer {
+    background: url('../images/footerImage.JPG') no-repeat center center/cover;
+    background-size: cover; 
+    height: 80px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+}
+
+/* FOOTER BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.github {
+    background: #24292e;
+}
+
+.linkedin {
+    background: #0077b5;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    filter: invert(1) hue-rotate(180deg);
+    background: #121212;
+}
+
+body.dark-mode img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    filter: invert(1) hue-rotate(180deg);
+    background: #222;
+    color: white;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#darkModeToggle:hover {
+    background: #666;
+}

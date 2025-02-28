@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="css/master.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    
+    <header>
+        <div class="header-overlay">
+            <h1>Weather Forecast</h1>
+        </div>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <p class="intro-text">
+            🌍 Welcome to my weather forecast page! Select a city to see weather predictions for the next 24 hours. 
+            Stay prepared with temperature, wind speed, humidity, and cloud coverage details.  
+        </p>
+        
+        <label for="cityDropdown">Select a city:</label>
+        <select id="cityDropdown">
+            <option value="">None</option>
+            <!-- Cities are added dynamically -->
+        </select>
+        <div id="selectedCity"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p border:1px solid black;>
+            <p>Contact: <a href="mailto:ilyasmo_1999@hotmail.co.uk" style="text-decoration:none; color: inherit;">ilyasmo_1999@hotmail.co.uk</a></p>
+
+            <div class="footer-links">
+                <a href="https://github.com/IlyasMohamud" target="_blank" class="btn github">GitHub</a>
+                <a href="https://www.linkedin.com/in/ilyasahmedmohamud/" target="_blank" class="btn linkedin">LinkedIn</a>
+            <p>
+        </div>
+        </div>
+    </footer>
+
+</body>
+</html>
