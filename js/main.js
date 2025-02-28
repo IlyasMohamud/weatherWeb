@@ -44,14 +44,11 @@ $(document).ready(function() {
 
                 // Build the API URL for fetching weather data based on city coordinates
                 const apiUrl = `http://www.7timer.info/bin/astro.php?lon=${cityInfo.lon}&lat=${cityInfo.lat}&ac=0&unit=metric&output=xml&tzshift=0`;
-                 // Use CORS Proxy to bypass CORS issue
-                 const corsProxy = "https://cors-anywhere.herokuapp.com/";
-                 const proxiedUrl = corsProxy + apiUrl; // Combine proxy URL with the original API URL
- 
+                
 
                 // Fetch weather data from the API
                 $.ajax({
-                    url: proxiedUrl,
+                    url: apiUrl,
                     dataType: 'xml',
                     success: function(response) {
                         let weatherInfo = `<h3>24-Hour Weather Forecast</h3>`;
