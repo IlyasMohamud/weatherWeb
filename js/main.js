@@ -43,7 +43,7 @@ $(document).ready(function() {
                 $('#selectedCity').html(`<h2>${selectedCity}</h2>`);
 
                 // Build the API URL for fetching weather data based on city coordinates
-                const apiUrl = `http://www.7timer.info/bin/astro.php?lon=${cityInfo.lon}&lat=${cityInfo.lat}&ac=0&unit=metric&output=xml&tzshift=0`;
+                const apiUrl = `https://www.7timer.info/bin/astro.php?lon=${cityInfo.lon}&lat=${cityInfo.lat}&ac=0&unit=metric&output=xml&tzshift=0`;
                 
 
                 // Fetch weather data from the API
