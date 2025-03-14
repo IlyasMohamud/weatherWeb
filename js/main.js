@@ -55,8 +55,7 @@ $(document).ready(function() {
                         let weatherInfo = `<h3>24-Hour Weather Forecast</h3>`;
                         let forecastData = $(response).find('dataseries data');
 
-                        // Get the current date and time
-                        let currentDate = new Date();
+                        
 
 
                         // Loop through the forecast data (for the next 24 hours)
@@ -71,11 +70,21 @@ $(document).ready(function() {
                             let precipitationType = data.find('prec_type').text(); // Precipitation type
                             let precipitationAmount = parseInt(data.find('prec_amount').text()) || 0; // Precipitation amount
 
-
+                            // Get the current date and time
+                            let currentDate = new Date();
                             // Add the timepoint (hours) to the current time
                             currentDate.setHours(currentDate.getHours() + timepoint);
-                            // Format the new time
-                            let formattedTime = currentDate.toLocaleString(); // This will give you the time in a readable format
+                           
+                            // Format the new time (European format without seconds)
+                            let formattedTime = currentDate.toLocaleString('en-GB', {
+                              day: '2-digit',
+                              month: '2-digit',
+                              year: 'numeric',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                              second: undefined, // Don't show seconds
+                              hour12: false // Use 24-hour format
+                            });
                             // Initialize weather condition and image
                             let condition = "Unknown";
                             let imageSrc = "clear.png";
