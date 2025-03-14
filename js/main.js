@@ -77,11 +77,12 @@ $(document).ready(function() {
                            
                             // Format the new time (European format without seconds)
                             let formattedTime = currentDate.toLocaleString('en-GB', {
-                              day: '2-digit',
-                              month: '2-digit',
-                              year: 'numeric',
+                              
+                             
                               hour: '2-digit',
                               minute: '2-digit',
+                              day: '2-digit',
+                              month: '2-digit',
                               second: undefined, // Don't show seconds
                               hour12: false // Use 24-hour format
                             });
