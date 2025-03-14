@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // Initialize an empty array to store city data
     let citiesData = [];
+    const visitTime = new Date();
 
     // Fetch the city coordinates from the CSV file
     $.ajax({
@@ -54,10 +55,14 @@ $(document).ready(function() {
                         let weatherInfo = `<h3>24-Hour Weather Forecast</h3>`;
                         let forecastData = $(response).find('dataseries data');
 
+                        // Get the current date and time
+                        let currentDate = new Date();
+
+
                         // Loop through the forecast data (for the next 24 hours)
                         for (let i = 0; i < 8; i++) {
                             let data = $(forecastData[i]);
-                            let timepoint = data.attr('timepoint'); // Forecasted hour
+                            let timepoint = parseInt(data.attr('timepoint'), 10); // Forecasted hour
                             let temp = data.find('temp2m').text(); // Temperature
                             let windSpeed = parseFloat(data.find('wind10m_speed').text()); // Wind speed
                             let humidity = data.find('rh2m').text(); // Humidity
@@ -66,6 +71,11 @@ $(document).ready(function() {
                             let precipitationType = data.find('prec_type').text(); // Precipitation type
                             let precipitationAmount = parseInt(data.find('prec_amount').text()) || 0; // Precipitation amount
 
+
+                            // Add the timepoint (hours) to the current time
+                            currentDate.setHours(currentDate.getHours() + timepoint);
+                            // Format the new time
+                            let formattedTime = currentDate.toLocaleString(); // This will give you the time in a readable format
                             // Initialize weather condition and image
                             let condition = "Unknown";
                             let imageSrc = "clear.png";
@@ -138,7 +148,7 @@ $(document).ready(function() {
                                         <img src="images/${imageSrc}" alt="${condition}">
                                         <p><strong>${condition}</strong></p>
                                     </div>
-                                    <p class="time-label">${timepoint}</p>
+                                    <p class="time-label">${formattedTime}</p>
                                     <p>
                                         🌡 <strong>Temp:</strong> ${temp}°C<br>
                                         💨 <strong>Wind:</strong> ${windSpeed} m/s<br>
