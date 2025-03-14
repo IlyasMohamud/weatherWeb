@@ -81,10 +81,10 @@ $(document).ready(function() {
                              
                               hour: '2-digit',
                               minute: '2-digit',
+                              second: undefined, // Don't show seconds
+                              hour12: false, // Use 24-hour format
                               day: '2-digit',
                               month: '2-digit',
-                              second: undefined, // Don't show seconds
-                              hour12: false // Use 24-hour format
                             });
                             // Initialize weather condition and image
                             let condition = "Unknown";
