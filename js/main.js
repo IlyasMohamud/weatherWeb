@@ -83,9 +83,19 @@ $(document).ready(function() {
                               minute: '2-digit',
                               second: undefined, // Don't show seconds
                               hour12: false, // Use 24-hour format
+                              
+                            });
+                            let formattedDate = currentDate.toLocaleString('en-GB', {
                               day: '2-digit',
                               month: '2-digit',
                             });
+
+                            // Concatenate the formatted time and date
+                            let finalFormattedTime = `${formattedTime}, ${formattedDate}`;
+
+
+
+                            
                             // Initialize weather condition and image
                             let condition = "Unknown";
                             let imageSrc = "clear.png";
@@ -158,7 +168,7 @@ $(document).ready(function() {
                                         <img src="images/${imageSrc}" alt="${condition}">
                                         <p><strong>${condition}</strong></p>
                                     </div>
-                                    <p class="time-label">${formattedTime}</p>
+                                    <p class="time-label">${finalFormattedTime}</p>
                                     <p>
                                         🌡 <strong>Temp:</strong> ${temp}°C<br>
                                         💨 <strong>Wind:</strong> ${windSpeed} m/s<br>
