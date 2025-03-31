@@ -6,4 +6,4 @@ The webpage uses the [7Timer API](https://www.7timer.info/doc.php?lang=en#civil)
 
 This project is just the beginning. There's still much more to explore. For now, it serves as a good starting point for learning about working with external data sources and integrating them into a web application.
 
-Link: [https://weather-web-one-nu.vercel.app/](https://ilyasmohamud.github.io/weatherWeb/)
+Link: https://ilyasmohamud.github.io/weatherWeb/
